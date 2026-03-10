@@ -1,4 +1,4 @@
-# Async FIFO Design (SystemVerilog)
+# Async FIFO Design 
 
 ## 1. Overview
 
