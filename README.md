@@ -1,3 +1,4 @@
+Async FIFO Design (SystemVerilog)
 1. Overview
 
 This project implements an Asynchronous FIFO (First-In-First-Out) memory in SystemVerilog.
@@ -52,7 +53,7 @@ Time = 1785: Comparison Passed: wr_data = 81 and rd_data = 81
 
 Asynchronous FIFO architecture
 
-Clock domain crossing (CDC)
+Clock Domain Crossing (CDC)
 
 SystemVerilog verification techniques
 
