@@ -55,4 +55,3 @@ The testbench uses the following verification techniques:
 - Queue-based scoreboard  
 - Randomized testing  
 
-## 5. Comparison Message
