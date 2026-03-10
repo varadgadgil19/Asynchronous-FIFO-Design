@@ -1,69 +1,58 @@
-Async FIFO Design (SystemVerilog)
-1. Overview
+# Async FIFO Design (SystemVerilog)
 
-This project implements an Asynchronous FIFO (First-In-First-Out) memory in SystemVerilog.
-The FIFO enables data transfer between two different clock domains using separate write (wclk) and read (rclk) clocks.
+## 1. Overview
 
-A SystemVerilog testbench verifies correct FIFO behavior using a queue-based reference model.
+This project implements an **Asynchronous FIFO (First-In-First-Out)** memory in SystemVerilog.
 
-2. Features
+The FIFO enables data transfer between **two different clock domains** using separate write (`wclk`) and read (`rclk`) clocks.
 
--Separate write and read clock domains
+A SystemVerilog testbench verifies correct FIFO behavior using a **queue-based reference model**.
 
--Parameterized data width
+---
 
--Full and Empty flag generation
+## 2. Features
 
--Random data testing
+- Separate write and read clock domains  
+- Parameterized data width  
+- Full and Empty flag generation  
+- Random data testing  
+- Queue-based scoreboard for verification  
+- VCD waveform generation for debugging  
 
--Queue-based scoreboard for verification
+---
 
--VCD waveform generation for debugging
+## 3. Design Details
 
-3. Design Details
+- Data is written on the **write clock (`wclk`)**
+- Data is read on the **read clock (`rclk`)**
 
--Data is written on the write clock (wclk)
+### FIFO Status Signals
 
--Data is read on the read clock (rclk)
+| Signal | Description |
+|------|-------------|
+| `full` | FIFO cannot accept more data |
+| `empty` | FIFO has no data to read |
 
-FIFO Status Signals:
+---
 
--full → FIFO cannot accept more data
-
--empty → FIFO has no data to read
-
-
-
-4. Verification Strategy
+## 4. Verification Strategy
 
 The testbench uses the following verification techniques:
 
--Randomized write data
+- Randomized write data  
+- SystemVerilog queue (`wdata_q`) as a reference model  
+- Comparison of expected data vs FIFO output  
+- Error reporting using `$error`  
 
--SystemVerilog queue (wdata_q) as a reference model
 
--Comparison of expected data vs FIFO output
+---
 
--Error reporting using $error
+## 5. Concepts Demonstrated
 
-5. Comparison Message
-   
-Comparison Passed: wr_data = XX and rd_data = XX
+- Asynchronous FIFO architecture  
+- Clock Domain Crossing (CDC)  
+- SystemVerilog verification techniques  
+- Queue-based scoreboard  
+- Randomized testing  
 
-6.  Example Output
-   
--Time = 1645: Comparison Passed: wr_data = 24 and rd_data = 24
-
--Time = 1785: Comparison Passed: wr_data = 81 and rd_data = 81
-
-7. Concepts Demonstrated
-
--Asynchronous FIFO architecture
-
--Clock Domain Crossing (CDC)
-
--SystemVerilog verification techniques
-
--Queue-based scoreboard
-
--Randomized testing
+## 5. Comparison Message
