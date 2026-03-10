@@ -9,19 +9,27 @@ A SystemVerilog testbench verifies correct FIFO behavior using a queue-based ref
 2. Features
 
 -Separate write and read clock domains
+
 -Parameterized data width
+
 -Full and Empty flag generation
+
 -Random data testing
+
 -Queue-based scoreboard for verification
+
 -VCD waveform generation for debugging
 
 3. Design Details
 
 -Data is written on the write clock (wclk)
+
 -Data is read on the read clock (rclk)
 
 FIFO Status Signals:
+
 -full → FIFO cannot accept more data
+
 -empty → FIFO has no data to read
 
 
@@ -31,21 +39,31 @@ FIFO Status Signals:
 The testbench uses the following verification techniques:
 
 -Randomized write data
+
 -SystemVerilog queue (wdata_q) as a reference model
+
 -Comparison of expected data vs FIFO output
+
 -Error reporting using $error
 
 5. Comparison Message
+   
 Comparison Passed: wr_data = XX and rd_data = XX
 
-7. Example Output
+6.  Example Output
+   
 -Time = 1645: Comparison Passed: wr_data = 24 and rd_data = 24
+
 -Time = 1785: Comparison Passed: wr_data = 81 and rd_data = 81
 
-9. Concepts Demonstrated
+7. Concepts Demonstrated
 
 -Asynchronous FIFO architecture
+
 -Clock Domain Crossing (CDC)
+
 -SystemVerilog verification techniques
+
 -Queue-based scoreboard
+
 -Randomized testing
